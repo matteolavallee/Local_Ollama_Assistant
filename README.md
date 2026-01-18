@@ -16,7 +16,7 @@ L'objectif final est de construire un assistant qui apprend de manière autonome
 
 Le projet est structuré pour séparer la logique de l'assistant, les outils et les différents scripts de test. Voici une description détaillée de l'arborescence :
 
-*   `1-Prototype_Chatbot_Ollama/`:
+*   `Local_Ollama_Assistant/`:
     *   `sketch/`:
         *   `chatbot.py`: Le script principal et le plus abouti pour lancer l'assistant en ligne de commande. Il intègre la gestion du contexte, les outils et le mode "réflexion" (`think`).
     *   `functions/`: Regroupe tous les "outils" (fonctions Python) que l'assistant peut utiliser.
@@ -47,7 +47,7 @@ Je conseille, sans think les modèles llama2 ou llama3.1.
 
 Pour interagir avec, exécutez le fichier suivant :
 ```bash
-python 1-Prototype_Chatbot_Ollama/sketch/chatbot.py
+python Local_Ollama_Assistant/sketch/chatbot.py
 ```
 ---
 
@@ -80,16 +80,16 @@ Ce prototype est doté de plusieurs "outils" (fonctions) que l'assistant peut d�
 
 2.  **Cloner le dépôt :**
     ```bash
-    git clone https://github.com/matteolavallee/1-Prototype_Chatbot_Ollama.git
+    git clone https://github.com/matteolavallee/Local_Ollama_Assistant.git
     ```
 
 3.  **Installer les dépendances :**
     ```bash
-    pip install -r 1-Prototype_Chatbot_Ollama/requirements.txt
+    pip install -r Local_Ollama_Assistant/requirements.txt
     ```
 
 4.  **Configuration de la mémoire utilisateur :**
-    Le système de mémoire est conçu pour s'initialiser tout seul. Lors du premier lancement de l'application, un fichier `user_memory.json` sera créé dans le répertoire `1-Prototype_Chatbot_Ollama/sketch/functions/user_settings/` avec les valeurs par défaut suivantes :
+    Le système de mémoire est conçu pour s'initialiser tout seul. Lors du premier lancement de l'application, un fichier `user_memory.json` sera créé dans le répertoire `Local_Ollama_Assistant/sketch/functions/user_settings/` avec les valeurs par défaut suivantes :
 
     ```json
     {
