@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+/sketch/functions/todo/todo.json
+/sketch/functions/user_settings/user_memory.json
