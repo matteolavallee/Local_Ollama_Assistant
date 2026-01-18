@@ -16,16 +16,27 @@ L'objectif final est de construire un assistant qui apprend de manière autonome
 
 Le projet est structuré pour séparer la logique de l'assistant, les outils et les différents scripts de test. Voici une description détaillée de l'arborescence :
 
-*   `Local_Ollama_Assistant/`:
-    *   `sketch/`:
-        *   `chatbot.py`: Le script principal et le plus abouti pour lancer l'assistant en ligne de commande. Il intègre la gestion du contexte, les outils et le mode "réflexion" (`think`).
-    *   `functions/`: Regroupe tous les "outils" (fonctions Python) que l'assistant peut utiliser.
-        *   `system.py`: Fonctions liées au système (date, heure, OS...).
-        *   `todo/`: Module de gestion de la todo list.
-        *   `user_settings/`: Module de gestion de la mémoire de l'utilisateur (`user_short_memory.py`). Le fichier `user_memory.json` est généré ici.
-        *   `prompt_system.py`: Fichier contenant différentes versions des prompts système qui ont été testées.
-    *   `tests/`: Contient des scripts de test et des versions alternatives du chatbot pour expérimenter des fonctionnalités spécifiques.
-    *   `requirements.txt`
+```
+Local_Ollama_Assistant/
+├── sketch/
+│   ├── chatbot.py                 # Script principal du chatbot
+│   └── functions/                 # Fonctions outils (Tool Calling)
+│       ├── calculette.py          # Outil de calcul mathématique
+│       ├── system.py              # Fonctions système (heure, date, etc.)
+│       ├── todo/                  # Gestion des tâches
+│       │   ├── todo_list_for_JARVIS.py
+│       │   └── tests/
+│       │       ├── todo_list.py
+│       │       └── todo.json
+│       └── user_settings/         # Gestion de la mémoire utilisateur
+│           └── user_short_memory.py
+├── tests/                         # Scripts de test
+│   ├── test_4_think.py
+│   └── test_chat_continu_plus_appel_fonctions.py
+├── requirements.txt               # Dépendances Python
+├── README.md                      # Documentation du projet
+└── .gitignore
+```
 
 Cette organisation a pour but de rendre le projet modulaire et facile à faire évoluer. De nouvelles fonctionnalités (connexion à des APIs, recherche web, etc.) peuvent par exemple être ajoutées comme de nouveaux modules dans le dossier `functions`.
 
